@@ -1,0 +1,14 @@
+[
+  {
+    "skill": "HTML",
+    "image": "img1.png"
+  },
+  {
+    "skill": "CSS",
+    "image": "img2.png"
+  },
+  {
+    "skill": "Javascript",
+    "image": "img3.png"
+  }
+]
