@@ -7,6 +7,7 @@
         "animate.css": "latest",
         "angular": "latest",
         "angular-ui-router": "latest",
-        "angular-resource": "latest"
+        "angular-resource": "latest",
+        "angular-animate": "latest"
     }
 }

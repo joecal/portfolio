@@ -5,13 +5,13 @@
   .module("portfolioApp", [
     "ui.router",
     "ngResource",
+    "ngAnimate",
     "HomeCtrl",
     "AboutCtrl",
     "ContactCtrl",
     "SkillsCtrl",
     "WorkCtrl",
-    "ContactService",
-    "SkillsService"
+    "ContactService"
   ])
   .config(["$stateProvider", "$locationProvider", RouterFunction]);
 
