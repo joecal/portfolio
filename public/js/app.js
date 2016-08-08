@@ -13,10 +13,11 @@
     "WorkCtrl",
     "ContactService"
   ])
-  .config(["$stateProvider", "$locationProvider", RouterFunction]);
+  .config(["$stateProvider", "$locationProvider", "$urlRouterProvider", RouterFunction]);
 
-    function RouterFunction($stateProvider, $locationProvider){
+    function RouterFunction($stateProvider, $locationProvider, $urlRouterProvider){
       $locationProvider.html5Mode(true);
+      $urlRouterProvider.otherwise('/');
       $stateProvider
       .state("homePage", {
         url: "/",
@@ -47,6 +48,9 @@
         templateUrl: "../views/work.html",
         controller: "WorkController",
         controllerAs: "WorkVM"
+      })
+      .state("otherwise", {
+        url : '/'
       });
   }
 })();

@@ -1,5 +1,8 @@
-angular.module('ContactCtrl', []).controller('ContactController', function($scope) {
+angular.module('ContactCtrl', []).controller('ContactController', ['$scope','$location', function($scope, $location) {
 
-    $scope.tagline = 'Nothing beats a pocket protector!';
+  $scope.currentPath = function(){
+    $scope.location = $location.path()
+    return $scope.location
+  }
 
-});
+}]);

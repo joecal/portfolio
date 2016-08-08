@@ -1,5 +1,8 @@
-angular.module('WorkCtrl', []).controller('WorkController', function($scope) {
+angular.module('WorkCtrl', []).controller('WorkController', ['$scope','$location', function($scope, $location) {
 
-    $scope.tagline = 'Work tagline!';
+  $scope.currentPath = function(){
+    $scope.location = $location.path()
+    return $scope.location
+  }
 
-});
+}]);

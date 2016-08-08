@@ -1,5 +1,7 @@
-angular.module('AboutCtrl', []).controller('AboutController', function($scope) {
+angular.module('AboutCtrl', []).controller('AboutController', ['$scope','$location', function($scope, $location) {
 
-    $scope.tagline = 'About tagline!';
-
-});
+  $scope.currentPath = function(){
+    $scope.location = $location.path()
+    return $scope.location
+  }
+}]);

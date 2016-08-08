@@ -1,6 +1,9 @@
 // public/js/controllers/HomeCtrl.js
-angular.module('HomeCtrl', []).controller('HomeController', function($scope) {
+angular.module('HomeCtrl', []).controller('HomeController', ['$scope','$location', function($scope, $location) {
 
-    $scope.tagline = 'To the moon and back!';
+  $scope.currentPath = function(){
+    $scope.location = $location.path()
+    return $scope.location
+  }
 
-});
+}]);

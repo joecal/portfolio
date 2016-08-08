@@ -1,79 +1,65 @@
 <!DOCTYPE html>
 <html data-ng-app="portfolioApp">
-<head>
-    <meta charset="UTF-8">
-    <base href="/">
+  <head>
+      <meta charset="UTF-8">
+      <base href="/">
 
-    <title>Joe Calvillo Portfolio</title>
+      <title>Joe Calvillo Portfolio</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet/less" href="css/styles.less"> <!-- custom styles -->
+      <!-- CSS -->
+      <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+      <link rel="stylesheet/less" href="css/styles.less"> <!-- custom styles -->
 
-    <!-- JS -->
-    <script src="libs/angular/angular.min.js"></script>
-    <script src="libs/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="libs/angular-resource/angular-resource.min.js"></script>
-    <script src="libs/angular-animate/angular-animate.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+      <!-- JS -->
+      <script src="libs/jquery/dist/jquery.min.js"></script>
+      <script src="libs/angular/angular.min.js"></script>
+      <script src="libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+      <script src="libs/angular-resource/angular-resource.min.js"></script>
+      <script src="libs/angular-animate/angular-animate.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
 
-    <!-- ANGULAR CUSTOM -->
-    <script src="js/controllers/homeCtrl.js"></script>
-    <script src="js/controllers/aboutCtrl.js"></script>
-    <script src="js/controllers/contactCtrl.js"></script>
-    <script src="js/controllers/skillsCtrl.js"></script>
-    <script src="js/controllers/workCtrl.js"></script>
-    <script src="js/services/contactServices.js"></script>
-    <script src="js/app.js"></script>
+      <!-- ANGULAR CUSTOM -->
+      <script src="js/controllers/homeCtrl.js"></script>
+      <script src="js/controllers/aboutCtrl.js"></script>
+      <script src="js/controllers/contactCtrl.js"></script>
+      <script src="js/controllers/skillsCtrl.js"></script>
+      <script src="js/controllers/workCtrl.js"></script>
+      <script src="js/services/contactServices.js"></script>
+      <script src="js/app.js"></script>
 
-</head>
-<body>
-<!-- <div class="container"> -->
+  </head>
+  <body>
+    <main>
 
-    <!-- HEADER -->
-    <nav class="navbar navbar-inverse">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">JoeCal Portfolio</a>
+      <!-- EMPTY SIDEBARS -->
+      <nav>
+
+      </nav>
+
+      <aside>
+
+      </aside>
+
+      <!-- ANGULAR DYNAMIC CONTENT -->
+      <div class="content" data-ui-view></div>
+
+        <div class="about animate-hide" ng-controller="AboutController" ng-hide="currentPath() === '/about'">
+            <h1><a href="/about">About_</a></h1>
         </div>
 
-        <!-- LINK TO PAGES. ANGULAR HANDLES THE ROUTING HERE -->
-        <ul class="nav navbar-nav">
-            <li><a href="/" ng-click="home = !home">Home</a></li>
-            <li><a href="/about" ng-click="about = !about">About</a></li>
-            <li><a href="/contact" ng-click="contact = !contact">Contact</a></li>
-            <li><a href="/skills" ng-click="skills = !skills">Skills</a></li>
-            <li><a href="/work" ng-click="work = !work">Work</a></li>
-        </ul>
-    </nav>
+        <div class="skills animate-hide" ng-controller="SkillsController" ng-hide="currentPath() === '/skills'">
+            <h1><a href="/skills">Skills_</a></h1>
+        </div>
 
-    <!-- ANGULAR DYNAMIC CONTENT -->
-    <main data-ui-view></main>
+        <div class="work animate-hide" ng-controller="WorkController" ng-hide="currentPath() === '/work'">
+            <h1 ng-show="currentPath() === '/contact'"><a href="/work">Work</a></h1>
+            <h1 ng-hide="currentPath() === '/contact'"><a href="/work">Work_</a></h1>
+        </div>
 
-    <div class="home animate-hide" ng-show="home">
-          <h1>Home Page 4 Life</h1>
+        <div class="contact animate-hide" ng-controller="ContactController" ng-hide="currentPath() === '/contact'">
+            <h1><a href="/contact">Contact</a></h1>
+        </div>
 
-      </div>
-
-      <div class="about animate-hide" ng-show="!about">
-          <h1>About</h1>
-
-      </div>
-
-      <div class="skills animate-hide" ng-show="!skills">
-          <h1>Skills</h1>
-
-      </div>
-
-      <div class="work animate-hide" ng-show="!work">
-          <h1>Work</h1>
-
-      </div>
-
-      <div class="contact animate-hide" ng-show="!contact">
-          <h1>Contact</h1>
-
-      </div>
-
-<!-- </div> -->
-</body>
+      </main>
+  </body>
 </html>

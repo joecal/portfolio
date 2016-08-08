@@ -1,100 +1,141 @@
-// main {
-//     /* start 'enter' transition */
-//     &.ng-enter {
-//         /* transition on enter for .5s */
-//         transition: 1s;
-//
-//         /* start with opacity 0 (invisible) */
-//         opacity: 0;
-//     }
-//
-//     /* end 'enter' transition */
-//     &.ng-enter-active {
-//         /* end with opacity 1 (fade in) */
-//         opacity: 1;
-//     }
-// }
-
-// html, body, div{
-//   margin:0;
-//   padding:0;
-//   border:0;
-//   font-size:inherit;
-//   font-weight:inherit;
-//   font-family:inherit;
-//   font-style:inherit;
-//   text-decoration:inherit;
-//   line-height:inherit;
-//   color:inherit;
-//   text-shadow: 1px 1px #d8e0e6;
-// }
-
+@import url(https://fonts.googleapis.com/css?family=Lobster|Cinzel+Decorative:900);
+*{
+  margin:0;
+  border:0;
+  padding:0;
+  border-collapse:collapse;
+  border-spacing:0;
+  font-size:inherit;
+  font-style:inherit;
+  font-family:inherit;
+  font-weight:inherit;
+  text-decoration:none;
+  color:inherit;
+  background-color:transparent;
+  list-style-type:none;
+  box-sizing:border-box;
+}
+*:focus{
+  outline:0
+}
+body,html{
+  position:relative;
+}
+a, button, label{
+  cursor:pointer;
+}
+html{
+}
+h1{
+  background-color: #fff;
+  font-size: 54px;
+}
+h2{
+  background-color: #fff;
+  font-size: 44px;
+}
+nav {
+  background: white; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(white, #eee, white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white, #eee, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white, #eee, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, #eee, white); /* Standard syntax */
+}
+aside {
+  background: white;
+  background: -webkit-linear-gradient(white, #eee, white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white, #eee, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white, #eee, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, #eee, white); /* Standard syntax */
+  order: 1;
+}
+nav, aside{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius:5px;
+  overflow:hidden;
+  background-color:#aba;
+  min-width:100px;
+  max-width:100px;
+}
+main>*:not(:nth-child(1)){
+  margin-left:0px;
+}
+body{
+  min-height:100vh;
+}
+main{
+   display: flex;
+}
+main>*{
+  background-color:#eee;
+}
+main>*:not(:nth-child(1)){
+  margin-left:0px;
+}
+@media screen and (max-width: 620px){
+  main{
+     flex-direction: column;
+  }
+  main>*:not(:nth-child(1)){
+    margin-left:10px;
+    margin-top:0px;
+  }
+  nav{
+     order: 1;
+  }
+  aside{
+     order: 2;
+  }
+  nav ul{
+    text-align:center;
+  }
+  nav figure img{
+    width:100px;
+    float:left;
+  }
+  nav, aside{
+    min-width:none;
+    max-width:none;
+  }
+}
+.content{
+  flex-grow: 3;
+}
 .animate-hide {
   transition: all linear 0.5s;
   height:100vh;
   opacity: 1;
 }
-
 .animate-hide.ng-hide {
   height: 0vh;
   opacity: 0;
 }
-
-.navbar, .h1, .h2, .h3, h1, h2, h3 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
 .home {
   height:100vh;
   background: white; /* For browsers that do not support gradients */
 }
-
-.about {
+.about, .skills, .work, .contact {
   height:100vh;
   background: white; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(white, black); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(white, black); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(white, black); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(white, black); /* Standard syntax */
+  background: -webkit-linear-gradient(white, #eee, white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white, #eee, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white, #eee, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, #eee, white); /* Standard syntax */
 }
-
-.skills {
-  height:100vh;
-  background: white; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(black, white); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(black, white); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(black, white); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(black, white); /* Standard syntax */
-}
-
-.work {
-  height:100vh;
-  background: white; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(white, black); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(white, black); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(white, black); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(white, black); /* Standard syntax */
-}
-
-.contact {
-  height:100vh;
-  background: white; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(black, white); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(black, white); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(black, white); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(black, white); /* Standard syntax */
-}
-
-main {
-    height:100vh;
+div {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
     /* start 'enter' transition */
     &.ng-enter {
-      transition: 1.5s;
+      transition: 0.5s;
       opacity: 0;
-      -webkit-animation:slideInUp 0.8s both ease-in;
-  	-moz-animation:slideInUp 0.8s both ease-in;
-  	animation:slideInUp 0.8s both ease-in;
+      -webkit-animation:slideInUp 0.5s both ease-in;
+  	-moz-animation:slideInUp 0.5s both ease-in;
+  	animation:slideInUp 0.5s both ease-in;
     }
 
     // /* end 'enter' transition */
@@ -103,7 +144,17 @@ main {
         opacity: 1;
     }
 }
-
+div.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+div.content {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
 
 /* ANIMATIONS
 ============================================================================= */
