@@ -13,7 +13,10 @@
     "WorkCtrl",
     "ContactService"
   ])
-  .config(["$stateProvider", "$locationProvider", "$urlRouterProvider", RouterFunction]);
+  .config(["$stateProvider", "$locationProvider", "$urlRouterProvider", RouterFunction])
+  .controller('ctrl', function ($scope, $timeout) {
+    $timeout(function() { $scope.showNavi = true;});
+  });
 
     function RouterFunction($stateProvider, $locationProvider, $urlRouterProvider){
       $locationProvider.html5Mode(true);

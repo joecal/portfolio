@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-ng-app="portfolioApp">
+<html data-ng-app="portfolioApp" data-ng-controller="ctrl">
   <head>
       <meta charset="UTF-8">
       <base href="/">
@@ -31,34 +31,26 @@
   <body>
     <main>
 
-      <!-- EMPTY SIDEBARS -->
-      <nav>
-
-      </nav>
-
-      <aside>
-
-      </aside>
-
       <!-- ANGULAR DYNAMIC CONTENT -->
       <div class="content" data-ui-view></div>
 
-        <div class="about animate-hide" ng-controller="AboutController" ng-hide="currentPath() === '/about'">
-            <h1><a href="/about">About_</a></h1>
+      <div class="navi" ng-if="showNavi">
+        <div class="animate-hide" ng-controller="AboutController" ng-hide="currentPath() === '/about'">
+          <h1 class="rightDivText"><a href="/about">About</a></h1>
         </div>
 
-        <div class="skills animate-hide" ng-controller="SkillsController" ng-hide="currentPath() === '/skills'">
-            <h1><a href="/skills">Skills_</a></h1>
+        <div class="animate-hide" ng-controller="SkillsController" ng-hide="currentPath() === '/skills'">
+          <h1 class="rightDivText"><a href="/skills">Skills</a></h1>
         </div>
 
-        <div class="work animate-hide" ng-controller="WorkController" ng-hide="currentPath() === '/work'">
-            <h1 ng-show="currentPath() === '/contact'"><a href="/work">Work</a></h1>
-            <h1 ng-hide="currentPath() === '/contact'"><a href="/work">Work_</a></h1>
+        <div class="animate-hide" ng-controller="WorkController" ng-hide="currentPath() === '/work'">
+          <h1 class="rightDivText"><a href="/work">Work</a></h1>
         </div>
 
-        <div class="contact animate-hide" ng-controller="ContactController" ng-hide="currentPath() === '/contact'">
-            <h1><a href="/contact">Contact</a></h1>
+        <div class="animate-hide" ng-controller="ContactController" ng-hide="currentPath() === '/contact'">
+          <h1 class="rightDivText"><a href="/contact">Contact</a></h1>
         </div>
+      </nav>
 
       </main>
   </body>
