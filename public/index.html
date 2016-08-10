@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-ng-app="portfolioApp" data-ng-controller="ctrl">
+<html data-ng-app="portfolioApp">
   <head>
       <meta charset="UTF-8">
       <base href="/">
@@ -26,24 +26,7 @@
   <body>
     <main>
       <!-- ANGULAR DYNAMIC CONTENT -->
-      <div class="content" data-ui-view ng-animate-children></div>
-        <div class="navi" ng-if="showNavi">
-          <div class="animate-hide" ng-controller="HomeController" ng-hide="currentPath() === '/home'">
-            <h1 class="rightDivText"><a href="/home">Home</a></h1>
-          </div>
-          <div class="animate-hide" ng-controller="AboutController" ng-hide="currentPath() === '/about'">
-            <h1 class="rightDivText"><a href="/about">About</a></h1>
-          </div>
-          <div class="animate-hide" ng-controller="SkillsController" ng-hide="currentPath() === '/skills'">
-            <h1 class="rightDivText"><a href="/skills">Skills</a></h1>
-          </div>
-          <div class="animate-hide" ng-controller="WorkController" ng-hide="currentPath() === '/work'">
-            <h1 class="rightDivText"><a href="/work">Work</a></h1>
-          </div>
-          <div class="animate-hide" ng-controller="ContactController" ng-hide="currentPath() === '/contact'">
-            <h1 class="rightDivText"><a href="/contact">Contact</a></h1>
-          </div>
-        </div>
+      <div id="masterUI" data-ui-view="master"></div>
       </main>
   </body>
 </html>

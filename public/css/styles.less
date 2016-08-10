@@ -1,3 +1,5 @@
+@import 'animate.less';
+
 *{
   margin:0;
   border:0;
@@ -30,7 +32,7 @@ h1{
   text-shadow: 1px 2px 3px #ddd;
 }
 h2{
-  font-size: 44px;
+  font-size: 34px;
 }
 main>*:not(:nth-child(1)){
   margin-left:0px;
@@ -65,41 +67,6 @@ main>*:not(:nth-child(1)){
     max-width:none;
   }
 }
-.content{
-  flex-grow: 3;
-  background-color: #fff;
-}
-.animate-hide {
-  transition: all linear 0.5s;
-  opacity: 1;
-}
-.animate-hide.ng-hide {
-  opacity: 0;
-}
-.home, .about, .skills, .work, .contact, .navi {
-  height:100vh;
-  background: white; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(white, #eee, white); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(white, #eee, white); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(white, #eee, white); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(white, #eee, white); /* Standard syntax */
-}
-div {
-    /* start 'enter' transition */
-    &.ng-enter {
-      transition: 0.5s;
-      opacity: 0;
-      -webkit-animation:slideInUp 0.5s both ease-in;
-  	-moz-animation:slideInUp 0.5s both ease-in;
-  	animation:slideInUp 0.5s both ease-in;
-    }
-
-    // /* end 'enter' transition */
-    &.ng-enter-active {
-        /* end with opacity 1 (fade in) */
-        opacity: 1;
-    }
-}
 div.home {
   width: 100vw;
   display: flex;
@@ -121,17 +88,17 @@ div.homeNavRight {
   align-items:flex-end;
   justify-content: space-between;
 }
-div.content {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: space-between;
-}
-div.home, div.about, div.contact, div.skills, div.work  {
-  box-shadow: 1px 1px 15px #ccc;
-}
 a{
   text-shadow: 1px 2px 3px #337ab7;
+}
+.home, .about, .skills, .work, .contact, .navbar {
+  height:100vh;
+  background: white; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(white, #eee, white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white, #eee, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white, #eee, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, #eee, white); /* Standard syntax */
+  box-shadow: 1px 1px 15px #ccc;
 }
 .leftDivText {
   display: flex;
@@ -145,44 +112,11 @@ a{
   justify-content: space-around;
   padding: 0px 10px;
 }
-.navi {
-  height:100vh;
+.navbar {
   display: flex;
   flex-direction: column;
   align-items: baseline;
   justify-content: space-around;
-  box-shadow: -1px -1px 15px #ccc;
-  /* start 'enter' transition */
-  &.ng-enter {
-    transition: 0.5s;
-    opacity: 0;
-    -webkit-animation:slideInRight 0.5s both ease-in;
-	-moz-animation:slideInRight 0.5s both ease-in;
-	animation:slideInRight 0.5s both ease-in;
-  }
-
-  // /* end 'enter' transition */
-  &.ng-enter-active {
-      /* end with opacity 1 (fade in) */
-      opacity: 1;
-  }
-}
-div.aboutContent, div.contactContent, div.homeContent, div.skillsContent, div.workContent  {
-  margin: 0 auto;
-  /* start 'enter' transition */
-  &.ng-enter {
-    transition: 0.5s;
-    opacity: 0;
-    -webkit-animation:slideInDown 0.5s both ease-in;
-  -moz-animation:slideInDown 0.5s both ease-in;
-  animation:slideInDown 0.5s both ease-in;
-  }
-
-  // /* end 'enter' transition */
-  &.ng-enter-active {
-      /* end with opacity 1 (fade in) */
-      opacity: 1;
-  }
 }
 .homeNavPad {
   padding: 20px;
@@ -197,12 +131,83 @@ div.aboutContent, div.contactContent, div.homeContent, div.skillsContent, div.wo
   color: #fff;
   text-shadow: -1px -1px 3px rgba(0, 0, 0, 0.3);
 }
+.pageContainer{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
 
 /* ANIMATIONS
 ============================================================================= */
 
-.ng-leave 	{ z-index:9999; }
-.ng-enter 	{ z-index:8888; }
+//MIXINS
+.transition(@transition) {
+  -webkit-transition: @transition;
+     -moz-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
+
+//GLOBAL TRANSITION CLASS
+#masterUI {
+	.transition(all 1s); //if using child trasition animations, they should all be under this time value, keyframe animations are differen
+}
+
+#masterUI, #navbarMain, #homeContent,
+#aboutContent, #aboutSidebar,
+#contactContent, #contactSidebar,
+#skillsContent, #skillsSidebar,
+#workContent, #workSidebar, {
+   .animated;
+}
+
+#masterUI.ng-enter {
+  #homeContent{ .fadeInUp; }
+  #navbarMain{ .fadeInRight; }
+  #aboutContent{ .fadeInDown; }
+  #aboutSidebar{ .fadeInUp; }
+  #contactContent{ .fadeInDown; }
+  #contactSidebar{ .fadeInUp; }
+  #skillsContent{ .fadeInDown; }
+  #skillsSidebar{ .fadeInUp; }
+  #workContent{ .fadeInDown; }
+  #workSidebar{ .fadeInUp; }
+}
+
+// #masterUI.ng-leave {
+//   #homeContent{ .fadeOutUp; }
+//   #navbarMain{ .fadeOutRight; }
+//   #aboutContent{ .fadeOutDown; }
+//   #aboutSidebar{ .fadeOutUp; }
+//   #contactContent{ .fadeOutDown; }
+//   #contactSidebar{ .fadeOutUp; }
+//   #skillsContent{ .fadeOutDown; }
+//   #skillsSidebar{ .fadeOutUp; }
+//   #workContent{ .fadeOutDown; }
+//   #workSidebar{ .fadeOutUp; }
+// }
+
+// #homeContent.ng-leave {
+//   -webkit-transition:all linear 0.5s;
+//   transition:all linear 0.5s;
+// }
+//
+// #homeContent.ng-leave.ng-leave-active {
+//   opacity:0;
+// }
+//
+// #homeContent.ng-leave {
+//   opacity:1;
+// }
+//
+// #homeContent.ng-leave     {
+//     -webkit-animation:slideOutLeft 0.6s both ease-in;
+// 	-moz-animation:slideOutLeft 0.6s both ease-in;
+// 	animation:slideOutLeft 0.6s both ease-in;
+// }
 
 /* scale up */
 @keyframes scaleUp {
@@ -229,6 +234,20 @@ div.aboutContent, div.contactContent, div.homeContent, div.skillsContent, div.wo
 	to 		{ -webkit-transform: translateX(0); }
 }
 
+/* slide in from the left */
+@keyframes slideInLeft {
+	from 	{ transform:translateX(-100%); }
+	to 		{ transform: translateX(0); }
+}
+@-moz-keyframes slideInLeft {
+	from 	{ -moz-transform:translateX(-100%); }
+	to 		{ -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInLeft {
+	from 	{ -webkit-transform:translateX(-100%); }
+	to 		{ -webkit-transform: translateX(0); }
+}
+
 /* slide in from the bottom */
 @keyframes slideInUp {
 	from 	{ transform:translateY(100%); }
@@ -245,19 +264,19 @@ div.aboutContent, div.contactContent, div.homeContent, div.skillsContent, div.wo
 
 /* slide in from the top */
 @keyframes slideInDown {
-	from 	{ transform:translateY(100%); }
+	from 	{ transform:translateY(-100%); }
 	to 		{ transform: translateY(0); }
 }
 @-moz-keyframes slideInDown {
-	from 	{ -moz-transform:translateY(0); }
-	to 		{ -moz-transform: translateY(100%); }
+	from 	{ -moz-transform:translateY(-100%); }
+	to 		{ -moz-transform: translateY(0); }
 }
 @-webkit-keyframes slideInDown {
-	from 	{ -webkit-transform:translateY(0); }
-	to 		{ -webkit-transform: translateY(100%); }
+	from 	{ -webkit-transform:translateY(-100%); }
+	to 		{ -webkit-transform: translateY(0); }
 }
 
-/* slide in from the left */
+/* slide out from the left */
 @keyframes slideOutLeft {
 	to 		{ transform: translateX(-100%); }
 }
@@ -268,19 +287,16 @@ div.aboutContent, div.contactContent, div.homeContent, div.skillsContent, div.wo
 	to 		{ -webkit-transform: translateX(-100%); }
 }
 
-/* slide in from the right */
-@keyframes slideOutLeft {
-	to 		{ transform: translateX(100%); }
-}
-@-moz-keyframes slideOutLeft {
-	to 		{ -moz-transform: translateX(100%); }
-}
-@-webkit-keyframes slideOutLeft {
-	to 		{ -webkit-transform: translateX(100%); }
-}
-
-/* when hiding the picture */
+/* when hiding navbar elements */
 .ng-hide-add         { animation:0.5s lightSpeedOut ease; }
+
+.animate-hide {
+  transition: all linear 0.5s;
+  opacity: 1;
+}
+.animate-hide.ng-hide {
+  opacity: 0;
+}
 
 /* ANIMATIONS (FROM ANIMATE.CSS) ======================== */
 
