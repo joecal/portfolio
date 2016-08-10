@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Lobster|Cinzel+Decorative:900);
 *{
   margin:0;
   border:0;
@@ -27,7 +26,7 @@ a, button, label{
 html{
 }
 h1{
-  font-size: 44px;
+  font-size: 40px;
   text-shadow: 1px 2px 3px #ddd;
 }
 h2{
@@ -102,10 +101,25 @@ div {
     }
 }
 div.home {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+div.homeNavLeft {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: baseline;
-  justify-content: space-around;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+div.homeNavRight {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items:flex-end;
+  justify-content: space-between;
 }
 div.content {
   display: flex;
@@ -170,12 +184,25 @@ div.aboutContent, div.contactContent, div.homeContent, div.skillsContent, div.wo
       opacity: 1;
   }
 }
+.homeNavPad {
+  padding: 20px;
+}
+.homeH1 {
+  font-size: 50px;
+  color: #fafafa;
+  text-shadow: -1px -1px 3px rgba(0, 0, 0, 0.3);
+}
+.indentedText {
+  font-size: 50px;
+  color: #fff;
+  text-shadow: -1px -1px 3px rgba(0, 0, 0, 0.3);
+}
 
 /* ANIMATIONS
 ============================================================================= */
 
-.page.ng-leave 	{ z-index:9999; }
-.page.ng-enter 	{ z-index:8888; }
+.ng-leave 	{ z-index:9999; }
+.ng-enter 	{ z-index:8888; }
 
 /* scale up */
 @keyframes scaleUp {
@@ -218,8 +245,8 @@ div.aboutContent, div.contactContent, div.homeContent, div.skillsContent, div.wo
 
 /* slide in from the top */
 @keyframes slideInDown {
-	from 	{ transform:translateY(0); }
-	to 		{ transform: translateY(100%); }
+	from 	{ transform:translateY(100%); }
+	to 		{ transform: translateY(0); }
 }
 @-moz-keyframes slideInDown {
 	from 	{ -moz-transform:translateY(0); }

@@ -1,6 +1,6 @@
 // app/routes.js
 
-// grab the contact model 
+// grab the contact model
 var Contact = require('./models/contact');
 
     module.exports = function(app) {
@@ -15,7 +15,7 @@ var Contact = require('./models/contact');
             Contact.find(function(err, contacts) {
 
                 // if there is an error retrieving, send the error.
-                                // nothing after res.send(err) will execute
+                // nothing after res.send(err) will execute
                 if (err)
                     res.send(err);
 
