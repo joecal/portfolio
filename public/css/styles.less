@@ -32,6 +32,7 @@ h1{
   text-shadow: 1px 2px 3px #ddd;
 }
 h2{
+  color: #777;
   font-size: 34px;
 }
 main>*:not(:nth-child(1)){
@@ -147,23 +148,72 @@ a{
   align-items: center;
   justify-content: space-between;
 }
-.aboutContent, .workContent {
+.aboutContent, .workContent, .skillsContent {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.workContent{
-  // box-shadow: 4px 4px 6px #ccc;
+.me {
+  margin: 10px;
+  border: 4px;
+  border-style: solid;
+  border-color: #f9f9f9;
+  height: 180px;
+  width: 180px;
+  background: url('../images/me.jpg');
+  background-size: cover;
+  overflow: hidden;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  box-shadow: 4px 4px 6px #ccc;
 }
 .aboutBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
   border: 4px;
   border-style: solid;
   border-color: #f6f6f6 #fdfdfd #eee #f5f5f5;
   background-color: #fff;
-  height: 400px;
+  height: 300px;
   width: 600px;
   box-shadow: 4px 4px 6px #ccc;
+}
+p {
+  color: #777;
+  font-size: 20px;
+  text-align: center;
+}
+.contactBox {
+  padding: 10px;
+  border: 4px;
+  border-style: solid;
+  border-color: #f6f6f6 #fdfdfd #eee #f5f5f5;
+  background-color: #fff;
+  height: 340px;
+  width: 600px;
+  box-shadow: 4px 4px 6px #ccc;
+}
+.skillsBox {
+  font-size: 80px;
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #fff;
+  height: 500px;
+  width: 700px;
+}
+.skillsContent {
+
 }
 
 /* ANIMATIONS
@@ -195,10 +245,10 @@ a{
   #navbarMain{ .fadeInRight; }
   #aboutContent{ .fadeInDown; }
   #aboutSidebar{ .fadeInUp; }
-  #contactContent{ .fadeInDown; }
-  #contactSidebar{ .fadeInUp; }
-  #skillsContent{ .fadeInDown; }
-  #skillsSidebar{ .fadeInUp; }
+  #contactContent{ .fadeInUp; }
+  #contactSidebar{ .fadeInDown; }
+  #skillsContent{ .fadeInUp; }
+  #skillsSidebar{ .fadeInDown; }
   #workContent{ .fadeInDown; }
   #workSidebar{ .fadeInUp; }
 }

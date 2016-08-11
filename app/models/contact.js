@@ -1,10 +1,16 @@
 // grab the mongoose module
-var mongoose = require('mongoose');
+var mongoose  = require("mongoose");
+var db = require('../../config/db');
 
-exports.ContactSchema = new mongoose.Schema(
+var ContactSchema = new mongoose.Schema(
   {
     name: String,
     email: String,
     message: String
   }
 );
+
+mongoose.model("Contact", ContactSchema);
+mongoose.createConnection(db.url);
+
+module.exports = mongoose;
