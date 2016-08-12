@@ -111,7 +111,6 @@ a{
   -moz-animation: AnimationName 46s ease infinite;
   animation: AnimationName 46s ease infinite;
 }
-
 @-webkit-keyframes AnimationName {
     0%{background-position:50% 0%}
     50%{background-position:51% 100%}
@@ -122,12 +121,12 @@ a{
     50%{background-position:51% 100%}
     100%{background-position:50% 0%}
 }
-@keyframes AnimationName {
+
+@keyframes AnimationNameTwo {
     0%{background-position:50% 0%}
     50%{background-position:51% 100%}
     100%{background-position:50% 0%}
 }
-
 .leftDivText {
   display: flex;
   flex-direction: column;
@@ -166,6 +165,37 @@ a{
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  background: linear-gradient(0deg, #def3f6, #1da2d8, #7fcdff, #76b6c4, #064273);
+  // background: linear-gradient(0deg, #064273, #76b6c4, #7fcdff, #1da2d8, #def3f6);
+  background-size: 1000% 1000%;
+
+  -webkit-animation: AnimationNameTwo 46s ease infinite;
+  -moz-animation: AnimationNameTwo 46s ease infinite;
+  animation: AnimationNameTwo 46s ease infinite;
+}
+@-webkit-keyframes AnimationNameTwo {
+    0%{background-position:50% 0%}
+    50%{background-position:51% 100%}
+    100%{background-position:50% 0%}
+}
+@-moz-keyframes AnimationNameTwo {
+    0%{background-position:50% 0%}
+    50%{background-position:51% 100%}
+    100%{background-position:50% 0%}
+}
+@keyframes AnimationNameTwo {
+    0%{background-position:50% 0%}
+    50%{background-position:51% 100%}
+    100%{background-position:50% 0%}
+}
+.pageOverlay {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 .aboutContent, .workContent, .skillsContent {
   display: flex;
@@ -230,6 +260,7 @@ p {
   background-color: #fff;
   height: 500px;
   width: 700px;
+  background-color: rgba(0, 0, 0, 0);
 }
 .skillsContent {
 
