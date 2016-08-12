@@ -32,7 +32,7 @@ h1{
   text-shadow: 1px 2px 3px #ddd;
 }
 h2{
-  color: #777;
+  color: #fff;
   font-size: 34px;
 }
 main>*:not(:nth-child(1)){
@@ -94,21 +94,40 @@ a{
 }
 #imageAnchor {
     background: url('../images/GitHub-Mark.png');
-    height: 430px;
+    height: 550px;
     width: 440px;
 }
 #imageAnchor:hover {
     background: url('../images/GitHub-Mark-hover.png');
 }
-.home, .about, .skills, .work, .contact, .navbar {
+.home, .about, .skills, .work, .contact, .navbar, .aboutBox, .contactBox {
   height:100vh;
-  background: white; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(white, #eee, white); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(white, #eee, white); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(white, #eee, white); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(white, #eee, white); /* Standard syntax */
   box-shadow: 1px 1px 15px #ccc;
+
+  background: linear-gradient(0deg, #def3f6, #1da2d8, #7fcdff, #76b6c4, #064273);
+  background-size: 1000% 1000%;
+
+  -webkit-animation: AnimationName 46s ease infinite;
+  -moz-animation: AnimationName 46s ease infinite;
+  animation: AnimationName 46s ease infinite;
 }
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:51% 100%}
+    100%{background-position:50% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:51% 100%}
+    100%{background-position:50% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:51% 100%}
+    100%{background-position:50% 0%}
+}
+
 .leftDivText {
   display: flex;
   flex-direction: column;
@@ -186,7 +205,7 @@ a{
   box-shadow: 4px 4px 6px #ccc;
 }
 p {
-  color: #777;
+  color: #fff;
   font-size: 20px;
   text-align: center;
 }
