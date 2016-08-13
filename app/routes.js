@@ -5,10 +5,15 @@ var Contact = mongoose.model("Contact");
 var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 <<<<<<< HEAD
+<<<<<<< HEAD
 var transporter = nodemailer.createTransport('smtps://jcalvillo757%40gmail.com:pass@smtp.gmail.com');
 =======
 var transporter = nodemailer.createTransport('smtps://jcalvillo757%40gmail.com:password@smtp.gmail.com');
 >>>>>>> 80620b6... Cleaned up and added a Readme
+=======
+
+var transporter = nodemailer.createTransport('smtps://jcalvillo757%40gmail.com:password@smtp.gmail.com');
+>>>>>>> 0804715... Github
 
   module.exports = function(app) {
 
