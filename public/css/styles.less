@@ -19,13 +19,8 @@
 *:focus{
   outline:0
 }
-body, html{
-  position:relative;
-}
 a, button, label{
   cursor:pointer;
-}
-html{
 }
 h1{
   font-size: 40px;
@@ -34,20 +29,6 @@ h1{
 h2{
   color: #fff;
   font-size: 34px;
-}
-main>*:not(:nth-child(1)){
-  margin-left:0px;
-}
-body{
-  min-height:100vh;
-}
-main{
-  display: flex;
-}
-main>*{
-}
-main>*:not(:nth-child(1)){
-  margin-left:0px;
 }
 @media screen and (max-width: 620px){
   main{
@@ -262,9 +243,6 @@ p {
   width: 700px;
   background-color: rgba(0, 0, 0, 0);
 }
-.skillsContent {
-
-}
 
 /* ANIMATIONS
 ============================================================================= */
@@ -279,7 +257,7 @@ p {
 
 //GLOBAL TRANSITION CLASS
 #masterUI {
-	.transition(all 1s); //if using child trasition animations, they should all be under this time value, keyframe animations are differen
+	.transition(all 1s); //if using child trasition animations, they should all be under this time value, keyframe animations are different
 }
 
 #masterUI, #navbarMain, #homeContent,
@@ -335,84 +313,6 @@ p {
 // 	animation:slideOutLeft 0.6s both ease-in;
 // }
 
-/* scale up */
-@keyframes scaleUp {
-	from 		{ opacity: 0.3; transform: scale(0.8); }
-}
-@-moz-keyframes scaleUp {
-	from 		{ opacity: 0.3; -moz-transform: scale(0.8); }
-}
-@-webkit-keyframes scaleUp {
-	from 		{ opacity: 0.3; -webkit-transform: scale(0.8); }
-}
-
-/* slide in from the right */
-@keyframes slideInRight {
-	from 	{ transform:translateX(100%); }
-	to 		{ transform: translateX(0); }
-}
-@-moz-keyframes slideInRight {
-	from 	{ -moz-transform:translateX(100%); }
-	to 		{ -moz-transform: translateX(0); }
-}
-@-webkit-keyframes slideInRight {
-	from 	{ -webkit-transform:translateX(100%); }
-	to 		{ -webkit-transform: translateX(0); }
-}
-
-/* slide in from the left */
-@keyframes slideInLeft {
-	from 	{ transform:translateX(-100%); }
-	to 		{ transform: translateX(0); }
-}
-@-moz-keyframes slideInLeft {
-	from 	{ -moz-transform:translateX(-100%); }
-	to 		{ -moz-transform: translateX(0); }
-}
-@-webkit-keyframes slideInLeft {
-	from 	{ -webkit-transform:translateX(-100%); }
-	to 		{ -webkit-transform: translateX(0); }
-}
-
-/* slide in from the bottom */
-@keyframes slideInUp {
-	from 	{ transform:translateY(100%); }
-	to 		{ transform: translateY(0); }
-}
-@-moz-keyframes slideInUp {
-	from 	{ -moz-transform:translateY(100%); }
-	to 		{ -moz-transform: translateY(0); }
-}
-@-webkit-keyframes slideInUp {
-	from 	{ -webkit-transform:translateY(100%); }
-	to 		{ -webkit-transform: translateY(0); }
-}
-
-/* slide in from the top */
-@keyframes slideInDown {
-	from 	{ transform:translateY(-100%); }
-	to 		{ transform: translateY(0); }
-}
-@-moz-keyframes slideInDown {
-	from 	{ -moz-transform:translateY(-100%); }
-	to 		{ -moz-transform: translateY(0); }
-}
-@-webkit-keyframes slideInDown {
-	from 	{ -webkit-transform:translateY(-100%); }
-	to 		{ -webkit-transform: translateY(0); }
-}
-
-/* slide out from the left */
-@keyframes slideOutLeft {
-	to 		{ transform: translateX(-100%); }
-}
-@-moz-keyframes slideOutLeft {
-	to 		{ -moz-transform: translateX(-100%); }
-}
-@-webkit-keyframes slideOutLeft {
-	to 		{ -webkit-transform: translateX(-100%); }
-}
-
 /* when hiding navbar elements */
 .ng-hide-add         { animation:0.5s lightSpeedOut ease; }
 
@@ -423,8 +323,6 @@ p {
 .animate-hide.ng-hide {
   opacity: 0;
 }
-
-/* ANIMATIONS (FROM ANIMATE.CSS) ======================== */
 
 /* light speed out */
 @keyframes lightSpeedOut {

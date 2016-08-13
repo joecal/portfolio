@@ -5,6 +5,7 @@
         "bootstrap": "latest",
         "font-awesome": "latest",
         "animate.css": "latest",
+        "less": "latest",
         "angular": "latest",
         "angular-ui-router": "latest",
         "angular-resource": "latest",

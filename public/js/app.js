@@ -14,7 +14,7 @@
     "ContactService"
   ])
   .config(["$stateProvider", "$locationProvider", "$urlRouterProvider", RouterFunction])
-  .controller('mainCtrl', ['$scope', '$location', '$timeout', function($scope, $location, $timeout) {
+  .controller('mainCtrl', ['$scope', '$location', function($scope, $location) {
     $scope.currentPath = function(){
       $scope.location = $location.path()
       return $scope.location
